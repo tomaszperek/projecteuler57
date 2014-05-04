@@ -13,8 +13,8 @@ object PE57 extends App {
     else {
       val numerator = prevNumerator + 2 * prevDenominator
       val denominator = prevNumerator + prevDenominator
-      val numDigits = Math.floor(Math.log10(numerator.toDouble))
-      val denomDigits = Math.floor(Math.log10(denominator.toDouble))
+      val numDigits = numerator.toString().length
+      val denomDigits = denominator.toString().length
       val newFoundSoFar = if (numDigits > denomDigits) (numerator, denominator) :: foundSoFar else foundSoFar
       calculate(howMuchMore -1, newFoundSoFar, numerator, denominator)
     }
